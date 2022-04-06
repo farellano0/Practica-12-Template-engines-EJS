@@ -10,7 +10,7 @@ app.use('/', function (req,res, next) {
     console.log('Request Url:' + req.url);
     next();
 });
-//prinera ruta (está al nivel de la raiz /), Hello Worldd!
+//prinera ruta (está al nivel de la raiz /), Hello Worldd! La función render renderiza el archivo ejs.
 app.get('/', function (req, res) {
     res.render('index');
 });
@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 app.get('/api', function (req, res) {
     res.json({ firstname: 'John', lastname: 'Doe' });
 });
-//Tercera ruta, recibe un parametro
+//Tercera ruta, recibe un parametro, la función render renderiza el archivo ejs.
 app.get('/person/:id', function (req, res) {
     res.render('person', { ID: req.params.id });
 });
